@@ -1,12 +1,7 @@
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
-const inter = Inter({ subsets: ["latin"] });
-import { Theme } from "@radix-ui/themes";
 import { ClerkProvider } from "@clerk/nextjs";
-
-
-
 
 export const metadata = {
   title: "GameNook",

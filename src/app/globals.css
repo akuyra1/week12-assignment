@@ -2,3 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+h1 {
+  font-size: 24px;
+}
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: lightgray;
+  margin: 0.3rem;
+}
+
+.landing > h1 {
+  margin-bottom: 1rem;
+}
+
+.landing > button {
+  width: fit-content;
+  border: 1px solid black;
+  padding: 0.2rem;
+  margin-top: 1rem;
+}
+
+.landing-games {
+  /* margin: 0.3rem; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.landing-games > img {
+  justify-self: center;
+}
