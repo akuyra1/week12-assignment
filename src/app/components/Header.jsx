@@ -1,3 +1,9 @@
+
+import React from "react";
+import * as Popover from "@radix-ui/react-popover";
+import Link from "next/link";
+import { Flex, Text, Button } from "@radix-ui/themes";
+
 // import React from 'react'
 // import * as Popover from '@radix-ui/react-popover';
 // import Link from 'next/link';
@@ -24,7 +30,6 @@
 //     </>
 //   )
 // }
-import Link from "next/link"
 
 import {
     UserButton,
@@ -42,9 +47,9 @@ const Header = () => {
     const { userId } = auth();  
     console.log(`Your user ID is: ${userId}`)
 
-
   return (
     <>
+
         <nav className="bg-green-700 py-4 px-6 flex items-center justify-between mb-5">
             <div className="flex items-center">
                 <Link href='/'>
@@ -76,9 +81,12 @@ const Header = () => {
                 </SignedIn>
             </div>    
         </nav>
+
     </>
-  )
+  );
 }
 
+
 export default Header
+
 
