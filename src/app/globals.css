@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* container for main page and then class used for dynamic pages */
+main,
+.main-body {
+  margin: 0.3rem;
+}
+
 h1 {
   font-size: 24px;
 }
@@ -19,7 +25,7 @@ h4 {
   flex-direction: column;
   padding: 1rem;
   background-color: lightgray;
-  margin: 0.3rem;
+  /* margin: 0.3rem; */
 }
 
 .landing > h1 {
@@ -47,7 +53,7 @@ h4 {
 }
 
 .game-info {
-  margin: 0.3rem;
+  /* margin: 0.3rem; */
   display: grid;
   grid-template-columns: 1fr 2fr;
   /* grid-template-rows: 1fr 1fr; */
@@ -71,7 +77,7 @@ h4 {
 }
 
 .reviews {
-  margin: 0.3rem;
+  /* margin: 0.3rem; */
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -81,6 +87,28 @@ h4 {
 }
 
 .user-review {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.user-info {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  /* margin: 0.3rem; */
+  margin-bottom: 1rem;
+}
+
+.favourites {
+  /* margin: 0.3rem; */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.favourites > h1 {
+  margin-bottom: 0.5rem;
+}
+
+.favourite-game {
   display: grid;
   grid-template-columns: 1fr 4fr;
 }
