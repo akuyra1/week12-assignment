@@ -1,6 +1,14 @@
-import Image from "next/image";
-// import '@radix-ui/themes/styles.css';
+
+// import "@radix-ui/themes/styles.css";
+import Landing from "./components/Landing";
+import LandingGames from "./components/LandingGames";
 
 export default function Home() {
-  return <main>hello world</main>;
+  return (
+    <main>
+      <Landing />
+      <LandingGames />
+    </main>
+  );
+
 }
