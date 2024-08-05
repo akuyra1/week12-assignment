@@ -8,42 +8,42 @@ export default function LandingGames() {
         className="game-image"
         src={gameImg}
         alt="video game image"
-        width={135}
+        width={"auto"}
         height={"auto"}
       />
       <Image
         className="game-image"
         src={gameImg}
         alt="video game image"
-        width={135}
+        width={"auto"}
         height={"auto"}
       />
       <Image
         className="game-image"
         src={gameImg}
         alt="video game image"
-        width={135}
+        width={"auto"}
         height={"auto"}
       />
       <Image
         className="game-image"
         src={gameImg}
         alt="video game image"
-        width={135}
+        width={"auto"}
         height={"auto"}
       />
       <Image
         className="game-image"
         src={gameImg}
         alt="video game image"
-        width={135}
+        width={"auto"}
         height={"auto"}
       />
       <Image
         className="game-image"
         src={gameImg}
         alt="video game image"
-        width={135}
+        width={"auto"}
         height={"auto"}
       />
     </div>
