@@ -1,4 +1,4 @@
-import { RowsIcon } from "@radix-ui/react-icons";
+// import { RowsIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { Flex, Text, Button } from "@radix-ui/themes";
 
@@ -12,10 +12,9 @@ import {
 import { auth } from "@clerk/nextjs/server";
 import { ClerkProvider } from "@clerk/nextjs";
 import Hamburger from "@/app/components/Hamburger";
-import '@/app/styles/Navigation.css'
+import "@/app/styles/Navigation.css";
 
 const Header = () => {
-
   const { userId } = auth();
 
   return (
