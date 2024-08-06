@@ -1,33 +1,6 @@
-import React from "react";
-import * as Popover from "@radix-ui/react-popover";
+import { RowsIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { Flex, Text, Button } from "@radix-ui/themes";
-
-// import React from 'react'
-// import * as Popover from '@radix-ui/react-popover';
-// import Link from 'next/link';
-// import { Flex, Text, Button } from '@radix-ui/themes';
-// import {
-//   ClerkProvider,
-//   SignInButton,
-//   SignedIn,
-//   SignedOut,
-//   UserButton
-// } from '@clerk/nextjs'
-
-// export default function Header() {
-//   return (
-//     <>
-//       <SignedOut>
-//         <SignInButton />
-//       </SignedOut>
-
-//       <SignedIn>
-//         <UserButton />
-//       </SignedIn>
-//     </>
-//   )
-// }
 
 import {
   UserButton,
@@ -38,11 +11,12 @@ import {
 } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
 import { ClerkProvider } from "@clerk/nextjs";
+import Hamburger from "@/app/components/Hamburger";
+import '@/app/styles/Navigation.css'
 
 const Header = () => {
-  //destructure the userId from auth
+
   const { userId } = auth();
-  console.log(`Your user ID is: ${userId}`);
 
   return (
     <>
