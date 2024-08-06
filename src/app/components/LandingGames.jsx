@@ -1,7 +1,12 @@
 import Image from "next/image";
 import gameImg from "@/../public/assets/gameboy.jpg";
+import fetchData from "../utils/fetchData";
 
-export default function LandingGames() {
+export default async function LandingGames() {
+  let endpoint = "screenshots";
+  const titles = await fetchData(endpoint);
+  console.log(titles);
+
   return (
     <div className="landing-games">
       <Image
