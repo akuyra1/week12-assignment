@@ -62,6 +62,7 @@ const Header = () => {
           <SignedIn>
             <UserButton afterSwitchSessionUrl="/" />
           </SignedIn>
+          <Hamburger />
         </div>
       </nav>
     </>
