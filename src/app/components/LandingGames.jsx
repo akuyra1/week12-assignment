@@ -23,19 +23,21 @@ export default async function LandingGames() {
 
   return (
     <>
-      {imgIdArray.map((game) => (
-        <div className="landing-games" key={game[1]}>
-          <Link href={`/game/${game[2]}`}>
-            <Image
-              className="game-image"
-              src={`https://images.igdb.com/igdb/image/upload/t_cover_big_2x/${game[0]}.jpg`}
-              alt="video game image"
-              width={264}
-              height={374}
-            />
-          </Link>
-        </div>
-      ))}
+      <div className="games-container">
+        {imgIdArray.map((game) => (
+          <div className="landing-games" key={game[1]}>
+            <Link href={`/game/${game[2]}`}>
+              <Image
+                className="game-image"
+                src={`https://images.igdb.com/igdb/image/upload/t_cover_big_2x/${game[0]}.jpg`}
+                alt="video game image"
+                width={264}
+                height={374}
+              />
+            </Link>
+          </div>
+        ))}
+      </div>
     </>
   );
 }
