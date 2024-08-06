@@ -1,16 +1,23 @@
 import Image from "next/image";
 import gameImg from "@/../public/assets/gameboy.jpg";
 import heart from "@/../public/assets/heart.jpg";
+import fetchGame from "../utils/fetchGame.js";
 
-export default function GameInfo() {
+export default async function GameInfo({ params }) {
+  // console.log(params);
+  const gameInfo = await fetchGame(params.slug);
+
+  // console.log("testing:", gameInfo);
+  console.log("testingimageID:", gameInfo[0].cover.image_id);
+
   return (
     <div className="game-info">
       <Image
         className="game-image"
-        src={gameImg}
+        src={`https://images.igdb.com/igdb/image/upload/t_cover_big_2x/${gameInfo[0].cover.image_id}.jpg`}
         alt="video game image"
         width={135}
-        height={"auto"}
+        height={300}
       />
       <div>
         <h1>Game Title</h1>

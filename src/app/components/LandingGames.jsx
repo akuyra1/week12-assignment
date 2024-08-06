@@ -1,6 +1,7 @@
 import Image from "next/image";
 import gameImg from "@/../public/assets/gameboy.jpg";
 import fetchData from "../utils/fetchData";
+import Link from "next/link";
 
 export default async function LandingGames() {
   let endpoint = "games";
@@ -14,23 +15,25 @@ export default async function LandingGames() {
 
   function wrangleData() {
     for (let i = 0; i < game.length; i++) {
-      imgIdArray.push([game[i].cover.image_id, game[i].id]);
+      imgIdArray.push([game[i].cover.image_id, game[i].id, game[i].slug]);
     }
   }
   wrangleData();
-  console.log(imgIdArray);
+  // console.log(imgIdArray);
 
   return (
     <>
       {imgIdArray.map((game) => (
         <div className="landing-games" key={game[1]}>
-          <Image
-            className="game-image"
-            src={`https://images.igdb.com/igdb/image/upload/t_cover_big_2x/${game[0]}.jpg`}
-            alt="video game image"
-            width={264}
-            height={374}
-          />
+          <Link href={`/game/${game[2]}`}>
+            <Image
+              className="game-image"
+              src={`https://images.igdb.com/igdb/image/upload/t_cover_big_2x/${game[0]}.jpg`}
+              alt="video game image"
+              width={264}
+              height={374}
+            />
+          </Link>
         </div>
       ))}
     </>
