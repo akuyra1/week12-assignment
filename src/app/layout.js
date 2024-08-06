@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
       <html lang="en">
         <body className={inter.className}>
-          <Theme accentColor="jade">
+          <Theme accentColor="green">
             <Header />
             {children}
           </Theme>
