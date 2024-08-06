@@ -1,8 +1,8 @@
 // export default async function fetchData(game) {
-//   let APIKEY = "77aee5f5780447459a08d43f0d187ec0";
+//   let APIKEY =
 //   const result = await fetch(`https://api.rawg.io/api/games?key=${APIKEY}`, {
 //     "content-type": "application/json",
-//     token: "Token 77aee5f5780447459a08d43f0d187ec0",
+//     token:
 //   });
 
 //   const data = await result.json();
