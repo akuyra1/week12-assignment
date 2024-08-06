@@ -8,6 +8,12 @@ const nextConfig = {
         port: "", // optional
         pathname: "/**", // match all paths
       },
+      {
+        protocol: "https",
+        hostname: "images.igdb.com",
+        port: "", // optional
+        pathname: "/**", // match all paths
+      },
       // Add other external hosts here
     ],
   },
