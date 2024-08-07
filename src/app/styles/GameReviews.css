@@ -3,15 +3,74 @@
     box-shadow: 2px 2px 2px rgb(96, 0, 0);
 }
 
+.user-name{
+    text-transform: capitalize;
+}
+
+.reviews h1 {
+    text-align: center;
+}
+.user-review {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+/*---------------------- comments form -------------------*/
+
 .commenting-user-container {
     display: flex;
-    /* background-color: red; */
     width: 85vw;
 }
+
 .user-pic {
     margin: 5px;
     border-radius: 50%;
 }
+
+
+.commenting-profile-pic {
+    border-radius: 50%;
+    margin: 1.5rem .5rem;
+}
+
+.comment-form-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-form-container h1 {
+    text-align: center;
+    margin: 1rem;
+    text-decoration: underline;
+}
+
+.comment-form-container h2 {
+    margin: 2.54rem 1rem;
+    text-transform: capitalize;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: rgb(178, 51, 78);
+}
+
+.comment-form-container button {
+    margin: 1rem .7rem;
+    width: 90%;
+}
+
+label {
+    margin: 10px;
+    font-size: 1.1rem;
+}
+
+.add-comment-text {
+    width: 800px;
+    margin: 5px 5px 25px 5px;
+    font-size: 1.1rem;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 700px) {
     .reviews {
@@ -33,46 +92,55 @@
         float: right;
         margin-right: 5px;
     }
-}
-/*---------------------- comments form -------------------*/
-.commenting-profile-pic {
-    border-radius: 50%;
-    margin: 1.5rem .5rem;
-}
-.comment-form-container{
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(156, 122, 122);
+    
+    .commenting-user-container {
+        display: flex;
+        width: 85vw;
+    }
+    
+    .user-pic {
+        margin: 5px;
+        border-radius: 50%;
+    }
+    
+    .commenting-profile-pic {
+        border-radius: 50%;
+        margin: 1.5rem .5rem;
+    }
+    
+    .comment-form-container h1 {
+        text-align: center;
+        margin: 1rem;
+        text-decoration: underline;
+        color: rgb(76, 23, 23);
+    }
+    
+    .comment-form-container h2 {
+        margin: 2.8rem 1rem;
+        text-transform: capitalize;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: rgb(178, 51, 78);
+    }
+    
+    .comment-form-container button {
+        margin: 1rem .7rem;
+        width: 90%;
+    }
+    
+    label {
+        margin: 10px;
+        font-size: 1.1rem;
+        color: rgb(0, 0, 0);
+    }
+    
+    .add-comment-text {
+        width: 400px;
+        margin: 5px 5px 25px 5px;
+        font-size: 1.1rem;
+    }
 }
 
-.comment-form-container h1 {
-    text-align: center;
-    margin: 1rem;
-    text-decoration: underline;
-    color: rgb(255, 242, 242);
-}
-.comment-form-container h2 {
-    margin: 2.54rem 1rem;
-    text-transform: capitalize;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: rgb(178, 51, 78);
-}
-.comment-form-container button {
-    margin: 1rem .7rem;
-    width: 90%;
-}
-label {
-    margin: 10px;
-    font-size: 1.1rem;
-    color: azure;
-}
-
-.add-comment-text {
-    width: 80vw;
-    margin: 5px 5px 25px 5px;
-    font-size: 1.1rem;
-}
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
     .reviews {
@@ -81,6 +149,7 @@ label {
     }
     
     .user-name {
+        text-transform: capitalize;
         margin:5px 13px;
     }
     
@@ -96,22 +165,63 @@ label {
 
     .commenting-user-container {
         display: flex;
-        /* background-color: red; */
         width: 90vw;
     }
+
+    .commenting-profile-pic {
+        border-radius: 50%;
+        margin: 1.5rem .5rem;
+    }
+
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 701px) {
     .commenting-user-container {
         display: flex;
-        width: 700px;
+        width: 600px;
+    }
+    .comment-form-container{
+        margin: 3rem;
+    }
+    
+    .comment-form-container h1 {
+        text-align: center;
+        margin: 1rem;
+        text-decoration: underline;
+        color: rgb(76, 23, 23);
+    }
+    
+    .comment-form-container h2 {
+        margin: 2.8rem 1rem;
+        text-transform: capitalize;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: rgb(178, 51, 78);
+    }
+    
+    .comment-form-container button {
+        margin: 1rem .7rem;
+        width: 90%;
+    }
+    
+    label {
+        margin: 10px;
+        font-size: 1.1rem;
+        color: rgb(0, 0, 0);
+    }
+    
+    .add-comment-text {
+        width: 400px;
+        margin: 5px 5px 25px 5px;
+        font-size: 1.1rem;
     }
 }
+
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-
 }
+
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
 }
