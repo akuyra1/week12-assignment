@@ -1,4 +1,4 @@
-//! work in progress DO NOT USE YET
+//!still can't clear the form, probably need useRef
 
 //once clerk is implemented we'll need to import it here and get the clerk id to put into the database, this will help with future database queries
 
@@ -6,18 +6,6 @@ import { dbConnect } from "../utils/dbConnection";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import Image from "next/image";
-
-//!only show if logged in with clerk
-
-// database entry need to go in this order:
-// using the gameid param from the API, check whether the game id exists in "nook_games" api_query column, if YES then copy id of that entry into the nook_comments table
-// if NO then make new entry in nook_games table using that param
-// table entry in "nook_comments" includes these:
-// user_id - foreign key taken from "nook_users" table
-// comment - from form
-// score - from form
-// game_id - foreign key taken from "nook_games" table
-// also need to make an entry in "nook_games" table
 
 export default function GameCommentForm({ params, userInfo }) {
   //game params here
@@ -32,9 +20,11 @@ export default function GameCommentForm({ params, userInfo }) {
     console.log(userInfo);
 
     await db.query(
-      `INSERT INTO nook_user_comments (username, comment, score, game_slug) VALUES ($1, $2, $3, $4)`,
-      [userInfo.userName, comment, score, params.slug]
+      `INSERT INTO nook_user_comments (username, comment, score, game_slug, user_img) VALUES ($1, $2, $3, $4, $5)`,
+      [userInfo.userName, comment, score, params.slug, userInfo.profileImage]
     );
+    revalidatePath(`/game/${params.slug}`);
+    redirect(`/game/${params.slug}`);
   }
 
   // console.log("this is the user info:", userInfo.userId);
