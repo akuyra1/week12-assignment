@@ -1,6 +1,8 @@
 import Image from "next/image";
 import heart from "@/../public/assets/heart.jpg";
+
 import { dbConnect } from "../utils/dbConnection";
+import "@/app/styles/GameReviews.css";
 
 export default async function GameComments({ params, searchParams }) {
   const db = dbConnect();
@@ -13,24 +15,27 @@ export default async function GameComments({ params, searchParams }) {
 
   return (
     <div className="reviews">
-      <h1>Reviews</h1>
+      <h1 className="pb-6">Reviews</h1>
 
       {userRes.map((post) => (
         <div className="user-review" key={post.id}>
-          <Image
-            src={post.user_img}
-            width={50}
-            height={50}
-            alt="user profile image"
-          />
           <div>
-            <h3>{post.username}</h3>
-            <p>{post.comment}</p>
-            <p>Rating: {post.score}/10</p>
+            <div className="commenting-user-container">
+              <Image
+                src={post.user_img}
+                width={50}
+                height={50}
+                alt="user profile image"
+                className="user-pic"
+              />
+              <h3 className="user-name">{post.username}</h3>
+             </div>           
+              <p className="user-comment">{post.comment}</p>
+              <p className="user-rating">Rating: {post.score}/10</p>
           </div>
+         </div>
         </div>
       ))}
-      <br />
     </div>
   );
 }

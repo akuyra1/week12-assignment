@@ -1,0 +1,78 @@
+.user-comment {
+    background-color: rgb(255, 204, 204);
+    box-shadow: 2px 2px 2px rgb(96, 0, 0);
+}
+
+.commenting-user-container {
+    display: flex;
+    /* background-color: red; */
+    width: 85vw;
+}
+.user-pic {
+    margin: 5px;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 700px) {
+    .reviews {
+        margin: 1rem;
+        padding: 1rem;
+    }
+    
+    .user-name {
+        margin: 15px 13px;
+        align-self: flex-end;
+    }
+    
+    .user-comment {
+        padding: 15px;
+        border-radius: 2rem;
+    }
+    
+    .user-rating {
+        float: right;
+        margin-right: 5px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .reviews {
+        margin: 1rem;
+        padding: 1rem;
+    }
+    
+    .user-name {
+        margin:5px 13px;
+    }
+    
+    .user-comment {
+        padding: 15px;
+        border-radius: 2rem;
+    }
+    
+    .user-rating {
+        float: right;
+        margin-right: 5px;
+    }
+
+    .commenting-user-container {
+        display: flex;
+        /* background-color: red; */
+        width: 90vw;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .commenting-user-container {
+        display: flex;
+        width: 700px;
+    }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

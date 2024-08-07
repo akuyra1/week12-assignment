@@ -28,7 +28,7 @@ export default async function LandingGames() {
           <div className="landing-games" key={game[1]}>
             <Link href={`/game/${game[2]}`}>
               <Image
-                className="game-image"
+                className="each-game-image"
                 src={`https://images.igdb.com/igdb/image/upload/t_cover_big_2x/${game[0]}.jpg`}
                 alt="video game image"
                 width={264}
