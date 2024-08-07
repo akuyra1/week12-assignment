@@ -14,11 +14,12 @@
         display: flex;
     }
     
-    .theDiv{
-        font-size: .7em !important;
+    .profile-link {
+        display: none;
     }
 
-    .profile-link {
+    .nav-signUp,
+    .nav-signIn {
         display: none;
     }
 }

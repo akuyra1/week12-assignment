@@ -14,7 +14,7 @@ button {
   min-width: 220px;
   background-color: white;
   border-radius: 6px;
-  padding: 5px;
+  padding: 8px;
   box-shadow: 0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2);
   animation-duration: 400ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
@@ -41,18 +41,19 @@ button {
 .DropdownMenuCheckboxItem,
 .DropdownMenuRadioItem,
 .DropdownMenuSubTrigger {
-  font-size: 13px;
+  font-size: 17px;
   line-height: 1;
   color: var(--violet-11);
   border-radius: 3px;
   display: flex;
   align-items: center;
-  height: 25px;
+  height: 35px;
   padding: 0 5px;
   position: relative;
   padding-left: 25px;
   user-select: none;
   outline: none;
+  color: black;
 }
 
 
@@ -60,7 +61,7 @@ button {
 .DropdownMenuCheckboxItem[data-highlighted],
 .DropdownMenuRadioItem[data-highlighted],
 .DropdownMenuSubTrigger[data-highlighted] {
-  background-color: green;
+  background-color: rgb(202, 80, 106);
   color: white;
 }
 
@@ -165,3 +166,20 @@ button {
   }
 }
 
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(255, 202, 202);
+  width: 300px;
+  padding: 1rem;
+}
+
+.burger-btns {
+  background-color: rgb(255, 125, 125);
+}
+
+.burger-btns:hover {
+  background-color: rgb(242, 97, 97);
+}
