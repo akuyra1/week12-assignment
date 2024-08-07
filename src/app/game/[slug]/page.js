@@ -1,6 +1,8 @@
 import GameInfo from "@/app/components/GameInfo";
 import GameComments from "@/app/components/GameComments";
-import GameCommentForm from "@/app/components/GameCommentForm";
+// import GameCommentForm from "@/app/components/GameCommentForm";
+import GameCommentFormClient from "@/app/components/GameCommentFormClient";
+import { handleSubmit } from "@/app/components/GameCommentFormServer";
 import { currentUser } from "@clerk/nextjs/server";
 import { SignedIn, SignedOut, SignInButton, SignUpButton } from "@clerk/nextjs";
 
@@ -24,7 +26,12 @@ export default async function Game({ params }) {
     <div className="main-body">
       <GameInfo params={params} />
       <SignedIn>
-        <GameCommentForm params={params} userInfo={serverData} />
+        {/* <GameCommentForm params={params} userInfo={serverData} /> */}
+        <GameCommentFormClient
+          handleSubmit={handleSubmit}
+          params={params}
+          userInfo={serverData}
+        />
       </SignedIn>
       <SignedOut>
         <h1>To leave a comment, please sign up/sign in</h1>
