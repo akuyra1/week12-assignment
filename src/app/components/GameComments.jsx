@@ -29,12 +29,11 @@ export default async function GameComments({ params, searchParams }) {
                 className="user-pic"
               />
               <h3 className="user-name">{post.username}</h3>
-             </div>           
+            </div>           
               <p className="user-comment">{post.comment}</p>
               <p className="user-rating">Rating: {post.score}/10</p>
           </div>
          </div>
-        </div>
       ))}
     </div>
   );
