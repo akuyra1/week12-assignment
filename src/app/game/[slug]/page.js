@@ -39,7 +39,7 @@ export default async function Game({ params }) {
           forceRedirectUrl={`/game/${params.slug}`}
         />
       </SignedOut>
-      <GameComments />
+      <GameComments params={params} />
     </div>
   );
 }

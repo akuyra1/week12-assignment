@@ -1,8 +1,3 @@
-CREATE TABLE "nook_games" (
-    "id" SERIAL PRIMARY KEY,
-    "api_query" TEXT NOT NULL
-);
-
 CREATE TABLE "nook_users" (
     "id" SERIAL PRIMARY KEY,
     "username" TEXT NOT NULL,

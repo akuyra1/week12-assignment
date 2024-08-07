@@ -1,51 +1,36 @@
 import Image from "next/image";
 import heart from "@/../public/assets/heart.jpg";
+import { dbConnect } from "../utils/dbConnection";
 
-export default function GameComments() {
+export default async function GameComments({ params, searchParams }) {
+  const db = dbConnect();
+
+  const commentResults = await db.query(
+    `SELECT * FROM nook_user_comments WHERE game_slug = $1`,
+    [params.slug]
+  );
+  const userRes = commentResults.rows;
+
   return (
     <div className="reviews">
       <h1>Reviews</h1>
-      <div className="user-review">
-        <Image src={heart} width={50} alt="user profile image" />
-        <div>
-          <h3>Username</h3>
-          <p>
-            Review Text: Lorem ipsum dolor sit amet consectetur, adipisicing
-            elit. Vitae, assumenda soluta placeat hic, maiores consectetur
-            officia porro tempore nihil tenetur natus voluptatibus eius sed odit
-            debitis? Similique iste facere sunt?
-          </p>
-          <p>Rating: &#9734;&#9734;&#9734;&#9734;&#9734;</p>
+
+      {userRes.map((post) => (
+        <div className="user-review" key={post.id}>
+          <Image
+            src={post.user_img}
+            width={50}
+            height={50}
+            alt="user profile image"
+          />
+          <div>
+            <h3>{post.username}</h3>
+            <p>{post.comment}</p>
+            <p>Rating: {post.score}/10</p>
+          </div>
         </div>
-      </div>
+      ))}
       <br />
-      <div className="user-review">
-        <Image src={heart} width={50} alt="user profile image" />
-        <div>
-          <h3>Username</h3>
-          <p>
-            Review Text: Lorem ipsum dolor sit amet consectetur, adipisicing
-            elit. Vitae, assumenda soluta placeat hic, maiores consectetur
-            officia porro tempore nihil tenetur natus voluptatibus eius sed odit
-            debitis? Similique iste facere sunt?
-          </p>
-          <p>Rating: &#9734;&#9734;&#9734;&#9734;&#9734;</p>
-        </div>
-      </div>
-      <br />
-      <div className="user-review">
-        <Image src={heart} width={50} alt="user profile image" />
-        <div>
-          <h3>Username</h3>
-          <p>
-            Review Text: Lorem ipsum dolor sit amet consectetur, adipisicing
-            elit. Vitae, assumenda soluta placeat hic, maiores consectetur
-            officia porro tempore nihil tenetur natus voluptatibus eius sed odit
-            debitis? Similique iste facere sunt?
-          </p>
-          <p>Rating: &#9734;&#9734;&#9734;&#9734;&#9734;</p>
-        </div>
-      </div>
     </div>
   );
 }
