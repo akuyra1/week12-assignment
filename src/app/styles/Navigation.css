@@ -1,32 +1,30 @@
 .navContainer {
-    background-color: #F5A898;
+  background-color: #f5a898;
 }
-
-
-
-
-
-
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 700px) {
-    .hamburger {
-        display: flex;
-    }
-    
-    .theDiv{
-        font-size: .7em !important;
-    }
+  .hamburger {
+    display: flex;
+  }
 
-    .profile-link {
-        display: none;
-    }
+  .theDiv {
+    font-size: 0.7em !important;
+  }
+
+  .profile-link {
+    display: none;
+  }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 600px) {
+}
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 768px) {
+}
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 992px) {
+}
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {}
+@media only screen and (min-width: 1200px) {
+}

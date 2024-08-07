@@ -9,7 +9,6 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
 /* container for main page and then class used for dynamic pages */
 main {
   margin: 5px;
@@ -25,6 +24,12 @@ h3 {
 
 h4 {
   font-size: 18px;
+}
+
+.gamebox {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
 }
 
 .landing {
@@ -55,12 +60,12 @@ h4 {
   border-radius: 1rem;
   gap: 1rem;
   margin: 1rem 1rem;
-  background-color: #FDBDAF;
+  background-color: #fdbdaf;
 }
 
 .landing-games:hover {
   transform: scale(1.01);
-  transition: .2s;
+  transition: 0.2s;
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -69,13 +74,14 @@ h4 {
     background-color: rgb(255, 195, 195);
     width: 100%;
     display: flex;
+    flex: 2;
     border-radius: 1rem;
     margin: 1rem 0;
   }
   .landing-games {
     flex-direction: row;
     justify-content: center;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
   }
 
   .landing {
@@ -85,7 +91,6 @@ h4 {
 
 .landing-games img {
   border-radius: 1rem;
-  
 }
 
 .game-info {
@@ -143,15 +148,3 @@ h4 {
   display: grid;
   grid-template-columns: 1fr 4fr;
 }
-
-
-
-
-
-
-
-
-
-
-
-
