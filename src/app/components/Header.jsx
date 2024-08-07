@@ -25,7 +25,6 @@ const Header = () => {
               GameNook
             </div>
           </Link>
-          
         </div>
         <div className="container flex justify-end m-0">
           {!userId && (

@@ -1,16 +1,16 @@
 CREATE TABLE "user_fav_games"(
     "id" BIGINT NOT NULL,
-    "user" BIGINT NOT NULL,
-    "game" BIGINT NOT NULL
+    "user" TEXT NOT NULL,
+    "game" TEXT NOT NULL
 );
 ALTER TABLE
     "user_fav_games" ADD SERIAL PRIMARY KEY("id");
 CREATE TABLE "nook_comments"(
     "id" BIGINT NOT NULL,
-    "user_id" BIGINT NOT NULL,
+    "user_id" TEXT NOT NULL,
     "comment" TEXT NOT NULL,
     "score" BIGINT NOT NULL,
-    "game_id" BIGINT NOT NULL
+    "game_id" TEXT NOT NULL
 );
 ALTER TABLE
     "nook_comments" ADD SERIAL PRIMARY KEY("id");
@@ -18,7 +18,7 @@ CREATE TABLE "nook_users"(
     "id" BIGINT NOT NULL,
     "username" TEXT NOT NULL,
     "bio" TEXT NOT NULL,
-    "clerk_id" BIGINT NOT NULL
+    "clerk_id" TEXT NOT NULL
 );
 ALTER TABLE
     "nook_users" ADD SERIAL PRIMARY KEY("id");

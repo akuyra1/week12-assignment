@@ -26,6 +26,12 @@ h4 {
   font-size: 18px;
 }
 
+.gamebox {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+}
+
 .landing {
   display: flex;
   flex-direction: column;
@@ -68,6 +74,7 @@ h4 {
     background-color: rgb(255, 195, 195);
     width: 100%;
     display: flex;
+    flex: 2;
     border-radius: 1rem;
     margin: 1rem 0;
   }
