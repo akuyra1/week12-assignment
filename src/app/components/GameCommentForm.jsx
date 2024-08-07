@@ -39,29 +39,29 @@ export default function GameCommentForm({ params, userInfo }) {
     );
   } else {
     return (
-      <div>
-        <h1>Leave a comment:</h1>
-
+      <div className="comment-form-container">
+        <h1>Leave a review</h1>
+        
         {/* <h1>User Id = {userInfo.userId}</h1> */}
         <form className="max-w-sm mx-auto" action={handleSubmit}>
           <div className="flex">
-            <p>Username: {userInfo.userName}</p>
-            <Image src={userInfo.profileImage} width={75} height={75}></Image>
+            <Image src={userInfo.profileImage} alt="User Profile picture" width={75} height={75} className="commenting-profile-pic"></Image>
+            <h2>{userInfo.userName}</h2>
           </div>
-          <label htmlFor="comment">Review:</label>
+          <label htmlFor="comment">Review</label>
           <textarea
             type="text"
             name="comment"
             placeholder="Write your review"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="add-comment-text bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             required
           />
-          <label htmlFor="score">Leave your score:</label>
+          <label htmlFor="score">Leave your score</label>
           <input
             type="number"
             name="score"
             required
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="add-comment-text bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             min="1"
             max="10"
           />
