@@ -7,7 +7,7 @@ export default async function GameInfo({ params }) {
   // console.log(params);
   const gameInfo = await fetchGame(params.slug);
   // console.log(gameInfo);
-  console.log(JSON.stringify(gameInfo));
+  // console.log(JSON.stringify(gameInfo));
   let time = new Date(gameInfo[0].first_release_date * 1000);
   let stringTime = time.toLocaleDateString("en-GB");
 
@@ -22,14 +22,25 @@ export default async function GameInfo({ params }) {
       />
       <div>
         <h1>{gameInfo[0].name}</h1>
-        <p>Release Date: {stringTime}</p>
-        <p>Developer: {gameInfo[0].involved_companies[0].company.name}</p>
         <p>
-          Platforms:{" "}
+          <span className="span">Release Date:</span> {stringTime}
+        </p>
+        <p>
+          <span className="span">Developer:</span>{" "}
+          {gameInfo[0].involved_companies[0].company.name}
+        </p>
+        <p>
+          <span className="span">Platforms:</span>{" "}
           {gameInfo[0].platforms.map((platform) => platform.name).join(", ")}
         </p>
-        <p>Genre: {gameInfo[0].genres.map((genre) => genre.name).join(", ")}</p>
-        <p>Theme: {gameInfo[0].themes.map((theme) => theme.name).join(", ")}</p>
+        <p>
+          <span className="span">Genre:</span>{" "}
+          {gameInfo[0].genres.map((genre) => genre.name).join(", ")}
+        </p>
+        <p>
+          <span className="span">Theme:</span>{" "}
+          {gameInfo[0].themes.map((theme) => theme.name).join(", ")}
+        </p>
         <div className="heart-button">
           <button>
             <Image src={heart} alt="favourite button" width={30} />

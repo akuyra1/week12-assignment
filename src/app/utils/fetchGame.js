@@ -11,7 +11,7 @@ export default async function fetchGame(params) {
       "Client-ID": `${clientId}`,
       Authorization: `Bearer ${APIKEY}`,
     },
-    body: `fields name, summary, platforms.name, involved_companies.company.name, genres.name, first_release_date, themes.name, cover.*; where slug = "${params}"; limit 1;`,
+    body: `fields name, summary, platforms.name, involved_companies.company.name, artworks.url, genres.name, first_release_date, themes.name, cover.*; where slug = "${params}"; limit 1;`,
   });
 
   const data = await result.json();
