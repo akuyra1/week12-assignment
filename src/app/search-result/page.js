@@ -1,11 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import fetchSearch from "../utils/fetchSearch";
 import SearchBar from "../components/SearchBar";
 
 export default function SearchResult() {
-  const router = useRouter();
   const searchParams = useSearchParams();
   const query = searchParams.get("query") || "";
 
@@ -30,7 +29,8 @@ export default function SearchResult() {
   const handleSearch = (query) => {
     if (query !== searchQuery) {
       setSearchQuery(query);
-      router.push(`/search-result?query=${query}`);
+      // Update the URL without refreshing the page
+      window.history.pushState({}, "", `/search-result?query=${query}`);
     }
   };
 

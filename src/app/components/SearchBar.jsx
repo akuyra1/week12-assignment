@@ -1,15 +1,21 @@
 "use client";
 import { useRef } from "react";
 
-export default function SearchBar() {
+export default function SearchBar({ onSearch }) {
   const searchRef = useRef(null);
+
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    const searchQuery = searchRef.current.value;
+    onSearch(searchQuery);
+  };
 
   return (
     <div>
-      <form action="/search-result" method="get">
+      <form onSubmit={handleSearchSubmit}>
         <label htmlFor="search"></label>
         <input
-          name="query"
+          name="search"
           type="text"
           placeholder="Search..."
           required
