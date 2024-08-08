@@ -5,6 +5,7 @@ import GameCommentFormClient from "@/app/components/GameCommentFormClient";
 import { handleSubmit } from "@/app/components/GameCommentFormServer";
 import { currentUser } from "@clerk/nextjs/server";
 import { SignedIn, SignedOut, SignInButton, SignUpButton } from "@clerk/nextjs";
+import { toggleFav } from "@/app/components/favouriteGame";
 
 export default async function Game({ params }) {
   const user = await currentUser();
@@ -24,9 +25,8 @@ export default async function Game({ params }) {
   console.log(serverData);
   return (
     <div className="main-body">
-      <GameInfo params={params} />
+      <GameInfo params={params} userInfo={serverData} toggleFav={toggleFav} />
       <SignedIn>
-        {/* <GameCommentForm params={params} userInfo={serverData} /> */}
         <GameCommentFormClient
           handleSubmit={handleSubmit}
           params={params}
