@@ -12,8 +12,8 @@ export default async function UserInfo() {
 
       <div className="user-info">
         <div>
-          <h1>Welcome, {user.username}!</h1>
-          <p>{user.username}'s collection of games'</p>
+          <h1 className="user-profile-name">Welcome, {user.username}!</h1>
+          <p className="user-profile-name">{user.username}&apos; collection of games</p>
         </div>
         <Image
           alt="user profile image"
