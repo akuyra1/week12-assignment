@@ -1,4 +1,4 @@
-export default async function POST(req, res) {
+export default async function POST(req) {
   const { query } = req.body;
   const APIKEY = process.env.IGDB_API_KEY;
   const clientId = process.env.IGDB_CLIENT_ID;
@@ -25,5 +25,5 @@ export default async function POST(req, res) {
   }
 
   const data = await response.json();
-  return res.status(200).json(data);
+  return new Response(JSON.stringify(data));
 }
