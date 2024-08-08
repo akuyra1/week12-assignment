@@ -33,94 +33,138 @@
     font-weight: bold;
     color: rgb(82, 82, 82);
 }
+.game-title-container1 {
+    display: flex;
+}
 
 @media only screen and (max-width: 700px) {
+    .game-info-container{
+        display: flex;
+        flex-direction: row;
+        gap: 35px;
+    }
     .game-details {
         margin: 0 40px;
         width: 80%;
     }
 
     .game-image {
-        margin-top: 45px;
-        margin-left: 15px;
+        margin-top: 38px;
         border-radius: 5px;
-        transform: scale(1.4);  
+        transform: scale(1.5);  
+    }
+    .game-info {
+        display: flex;
+        flex-direction: column;
     }
     
     .game-description {
-        margin-top: 4rem;
+        margin: 4rem .5rem;
         font-size: 1.18rem;
     }
+
     .game-title {
-        padding-bottom: 2rem;
-    }
-    .heart-button {
-        margin-top: -2rem;
-        margin-left: 1rem !important;
+        margin: 1rem 1rem;
+        font-size: 2rem; 
     }
 
+    .game-title-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin: 0;
+    }
+
+    .game-title-container1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 30px;
+        width: 100%;
+        margin-bottom: -2rem;
+    }
+
+    .body-container {
+        display: flex;
+        flex-direction: column;
+        margin: 5px;
+
+    }
 }
 
 @media only screen and (min-width: 600px) {
     .game-description {
-        margin: 8rem 1rem 3rem 0;
+        margin: 5rem 1rem;
         font-size: 1.2rem;
-        background-color: #fff;
     }
 
     .game-image {
-        margin-top: 6rem;
-        margin-left: 3.5rem;
+        margin-top: 4rem;
+        margin-left: 2.5rem;
         transform: scale(2);  
     }
 
-    .game-details {
-        margin: 0 6rem;
-        width: 80%;
-    }
-    .heart-button {
-        margin-top: -2rem;
-        /* margin-left: 0rem; */
+    .game-title{
+        font-size: 2rem;
     }
 
-    .game-title{
-        font-size: 1.8rem;
-        padding-bottom: 2rem;
+    .game-title-container1{
+        margin-bottom: -1rem;
+    }
+
+    .game-info-container {
+        gap: 8rem;
     }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 701px) {
     .game-image {
-        margin-top: 5.5rem;
-        margin-left: 3.5rem;
-        transform: scale(2);
+        margin-top: 7.4rem;
+        margin-left: 5rem;
+        transform: scale(2.5);
     }
-
-    .game-details {
-        margin: 0 40px; 
-        width: 85%;
-    }
-    
+ 
     .game-description {
         margin-top: 8rem;
-        margin-left: 0;
+        margin-left: 1rem;
+        font-size: 1.3rem;
     }
 
-    .heart-button {
-        margin-left: -1rem;
+    .game-description h3 {
+        font-size: 2rem !important;
+    }
+
+    .game-title-container1 {
+        margin-left: 2rem;
+        /* background-color: red; */
+    }
+
+    .game-info-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        align-content: flex-start;
+    }
+
+    .game-specs {
+        display: flex;
+        flex-direction: column;
+        margin-left: -5rem;
+        padding-left: 2rem;
+        font-size: 1.2rem;
     }
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 900px) {
     .game-image {
-        border-radius: 5px;
-        transform: scale(3);
-        margin: 10rem 8rem;
+        transform: scale(2.3);
+        margin: 7.5rem 5rem;
     }
-
-    .game-details {
-        margin: 0 0 0 6rem;
-        width: 80%;
+    
+    .game-info {
+        display: flex;
+        flex-direction: column;
     }
 
     .game-title{
@@ -132,13 +176,23 @@
         font-weight: bold;
         color: rgb(82, 82, 82);
     }
-
-    .heart-button {
-        margin-left: -3rem;
-    }
 }
 
-@media only screen and (min-width: 1200px) {}
+@media only screen and (min-width: 1200px) {
+    .game-specs,
+    .game-description {
+        font-size: 1.5rem;
+    }
+
+    .game-title-container1 {
+        margin-bottom: 1rem;
+    }
+
+    .game-description h3 {
+        font-size: 2rem;
+    }
+
+}
 
 
 
