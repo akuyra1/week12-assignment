@@ -11,23 +11,24 @@ export default async function UserInfo() {
     <div className="body">
 
       <div className="user-info">
-        <div>
-          <h1 className="user-profile-name">Welcome, {user.username}!</h1>
-          <p className="user-profile-name">{user.username}&apos; collection of games</p>
-        </div>
         <Image
           alt="user profile image"
           src={user.imageUrl}
           width={50}
           height={50}
+          className="profile-pic"
         />
+        <div>
+          <h1 className="user-profile-name h1">Welcome, {user.username}!</h1>
+          <p className="user-profile-name p">{user.username}&apos;s collection of games</p>
+        </div>
       </div>
-      <p>
+      {/* <p>
         Bio: Lorem ipsum dolor sit amet consectetur adipisicing elit.
         Voluptatibus quasi hic aspernatur, dignissimos aut sit beatae aperiam
         earum dolore doloribus. Earum quisquam maxime vel cupiditate aliquid
         veniam quaerat neque sapiente.
-      </p>
+      </p> */}
     </div>
   );
 }

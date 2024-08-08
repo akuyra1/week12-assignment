@@ -18,7 +18,7 @@ export default async function GameInfo({ params, userInfo, toggleFav }) {
   let coverUrl = `https://images.igdb.com/igdb/image/upload/t_cover_big_2x/${gameInfo[0].cover.image_id}.jpg`;
   let title = gameInfo[0].name;
 
-  // toggleFav(userInfo.userId, params.slug, coverUrl, title);
+//   toggleFav(userInfo.userId, params.slug, coverUrl, title);
   //function works but needs to have a toggle button in a client component
 
   return (
