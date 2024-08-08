@@ -30,7 +30,7 @@ export default async function FavouriteGames({ userId }) {
                 src={game.cover_url}
                 width={50}
                 height={100}
-                alt="game cover art"
+                alt={`Cover art for ${game.title}`}
               />
             </Link>
             <div>

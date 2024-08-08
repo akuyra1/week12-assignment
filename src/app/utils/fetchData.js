@@ -9,7 +9,7 @@ export default async function fetchData(endpoint) {
       "Client-ID": `${clientId}`,
       Authorization: `Bearer ${APIKEY}`,
     },
-    body: "fields slug, cover.*; where total_rating_count > 500 ; limit 100;",
+    body: "fields slug, cover.*, name; where total_rating_count > 500 ; limit 100;",
   });
 
   const data = await result.json();

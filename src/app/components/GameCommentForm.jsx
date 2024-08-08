@@ -1,4 +1,4 @@
-//!still can't clear the form, probably need useRef
+//!replaced by GameCommentCLient/Server.js this isn't needed anymore
 
 //once clerk is implemented we'll need to import it here and get the clerk id to put into the database, this will help with future database queries
 
@@ -41,11 +41,17 @@ export default function GameCommentForm({ params, userInfo }) {
     return (
       <div className="comment-form-container">
         <h1>Leave a review</h1>
-        
+
         {/* <h1>User Id = {userInfo.userId}</h1> */}
         <form className="max-w-sm mx-auto" action={handleSubmit}>
           <div className="flex">
-            <Image src={userInfo.profileImage} alt="User Profile picture" width={75} height={75} className="commenting-profile-pic"></Image>
+            <Image
+              src={userInfo.profileImage}
+              alt="User Profile picture"
+              width={75}
+              height={75}
+              className="commenting-profile-pic"
+            ></Image>
             <h2>{userInfo.userName}</h2>
           </div>
           <label htmlFor="comment">Review</label>
