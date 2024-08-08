@@ -1,4 +1,4 @@
-export default async function POST(req) {
+export async function POST(req) {
   const { query } = req.body;
   const APIKEY = process.env.IGDB_API_KEY;
   const clientId = process.env.IGDB_CLIENT_ID;
@@ -11,7 +11,8 @@ export default async function POST(req) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      fields: "game.name,game.first_release_date,game.cover.*",
+      fields:
+        "fields alternative_name,character,checksum,collection,company,description,game,name,platform,published_at,test_dummy,theme;",
       search: query,
       limit: 10,
       where: "game.version_parent = null",
