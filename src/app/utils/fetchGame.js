@@ -5,7 +5,7 @@ export default async function fetchGame(params) {
 
   // console.log("params has:", params);
 
-  const result = await fetch("https://api.igdb.com/v4/games", {
+  const result = await fetch("http://localhost:3000/api/route", {
     method: "POST",
     headers: {
       "Client-ID": `${clientId}`,

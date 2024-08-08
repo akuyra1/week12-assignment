@@ -3,7 +3,7 @@ export default async function fetchData(endpoint) {
   let APIKEY = process.env.IGDB_API_KEY;
   let clientId = process.env.IGDB_CLIENT_ID;
 
-  const result = await fetch(`https://api.igdb.com/v4/${endpoint}`, {
+  const result = await fetch(`http://localhost:3000/api/route${endpoint}`, {
     method: "POST",
     headers: {
       "Client-ID": `${clientId}`,
