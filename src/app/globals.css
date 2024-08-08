@@ -60,36 +60,13 @@ h4 {
   border-radius: 1rem;
   gap: 1rem;
   margin: 1rem 1rem;
-  background-color: #fdbdaf;
+  background-color: #313131;
 }
 
 .landing-games:hover {
   transform: scale(1.01);
   transition: 0.2s;
 }
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-  .games-container {
-    background-color: rgb(255, 195, 195);
-    width: 98%;
-    display: flex;
-    flex: 2;
-    border-radius: 1rem;
-    margin: 1rem 1rem;
-  }
-
-  .landing-games {
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .landing {
-    font-size: 1.3rem;
-  }
-}
-
 .landing-games img {
   border-radius: 1rem;
 }
@@ -153,3 +130,63 @@ h4 {
   display: grid;
   grid-template-columns: 1fr 4fr;
 }
+
+/* ------------------------------------Media Queries------------------------------------ */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 700px) {
+  .games-container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .games-container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 701px) {
+  .games-container {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .games-container {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .games-container {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    /* background-color: rgb(255, 195, 195); */
+    width: 98%;
+    /* display: flex; */
+    /* flex: 2; */
+    border-radius: 1rem;
+    margin: 1rem 1rem;
+  }
+
+  .landing-games {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .landing {
+    font-size: 1.3rem;
+  }
+}
+
+

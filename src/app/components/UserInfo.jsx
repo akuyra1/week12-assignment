@@ -1,16 +1,19 @@
 import { currentUser } from "@clerk/nextjs/server";
 import Image from "next/image";
 import heart from "@/../public/assets/heart.jpg";
+import "@/app/styles/UserProfilePage.css";
+
 
 export default async function UserInfo() {
   const user = await currentUser();
 
   return (
-    <>
+    <div className="body">
+
       <div className="user-info">
         <div>
           <h1>Welcome, {user.username}!</h1>
-          <p>Some form of info about user</p>
+          <p>{user.username}'s collection of games'</p>
         </div>
         <Image
           alt="user profile image"
@@ -25,6 +28,6 @@ export default async function UserInfo() {
         earum dolore doloribus. Earum quisquam maxime vel cupiditate aliquid
         veniam quaerat neque sapiente.
       </p>
-    </>
+    </div>
   );
 }
