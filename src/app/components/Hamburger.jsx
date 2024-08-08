@@ -36,7 +36,7 @@ const DropdownMenuDemo = () => {
               <Link href="/">Home</Link>
             </DropdownMenu.Item>
             <DropdownMenu.Item className="DropdownMenuItem">
-            <Link href="/">Profile</Link>
+            <Link href="/profile">Profile</Link>
             </DropdownMenu.Item>
             <DropdownMenu.Item className="DropdownMenuItem">
             <Link href="/">Games</Link>

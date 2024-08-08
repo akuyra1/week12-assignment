@@ -39,6 +39,7 @@
 .comment-form-container{
     display: flex;
     flex-direction: column;
+    width: 90%;
 }
 
 .comment-form-container h1 {
@@ -124,8 +125,8 @@ label {
     }
     
     .comment-form-container button {
-        margin: 1rem .7rem;
-        width: 90%;
+        margin: 2rem 1.7rem;
+        width: 70%;
     }
     
     label {
@@ -135,9 +136,15 @@ label {
     }
     
     .add-comment-text {
-        width: 400px;
+        width: 300px;
         margin: 5px 5px 25px 5px;
         font-size: 1.1rem;
+    }
+    .comment-form-container {
+        margin: 0 auto;
+        width: 80%;
+        /* background-color: rgb(135, 116, 153); */
+        /* box-sizing: border-box; */
     }
 }
 

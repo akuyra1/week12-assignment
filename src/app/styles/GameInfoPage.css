@@ -1,45 +1,42 @@
 .game-info-container {
     margin: 1rem;
     padding: 1rem;
-    /* background-color: rgb(255, 246, 246); */
-    /* display: flke; */
 }
 
 .game-title-container {
     display: flex;
     flex-direction: row;
-    /* width: 55vw; */
-    /* background-color: red; */
     justify-content: flex-start;
 }
+
 .game-image {
     border-radius: 5px;
     transform: scale(1.2);
-    
 }
 
 .game-description {
     padding: 7px;
 }
+
 .game-title{
     font-size: 1.8rem;
+    font-weight: bold;
+    color: blueviolet;
 }
 
 .heart-button {
     width: 20%;
 }
+
 .game-description h3 {
     font-size: 1.5rem;
     font-weight: bold;
     color: rgb(82, 82, 82);
 }
 
-
-
 @media only screen and (max-width: 700px) {
     .game-details {
         margin: 0 40px;
-        /* padding-left: 1px;  */
         width: 80%;
     }
 
@@ -53,7 +50,13 @@
     .game-description {
         margin-top: 4rem;
         font-size: 1.18rem;
-        /* background-color: green; */
+    }
+    .game-title {
+        padding-bottom: 2rem;
+    }
+    .heart-button {
+        margin-top: -2rem;
+        margin-left: 1rem !important;
     }
 
 }
@@ -73,10 +76,17 @@
 
     .game-details {
         margin: 0 6rem;
-        /* background-color: red; */
         width: 80%;
     }
+    .heart-button {
+        margin-top: -2rem;
+        /* margin-left: 0rem; */
+    }
 
+    .game-title{
+        font-size: 1.8rem;
+        padding-bottom: 2rem;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -89,13 +99,15 @@
     .game-details {
         margin: 0 40px; 
         width: 85%;
-        /* background-color: red;   */
-
     }
     
     .game-description {
         margin-top: 8rem;
         margin-left: 0;
+    }
+
+    .heart-button {
+        margin-left: -1rem;
     }
 }
 
@@ -119,6 +131,10 @@
         font-size: 1.5rem;
         font-weight: bold;
         color: rgb(82, 82, 82);
+    }
+
+    .heart-button {
+        margin-left: -3rem;
     }
 }
 
