@@ -25,5 +25,5 @@ export default async function POST(req) {
   }
 
   const data = await response.json();
-  return new Response(JSON.stringify(data));
+  return data;
 }
