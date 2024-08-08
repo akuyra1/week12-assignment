@@ -12,8 +12,11 @@
 /* container for main page and then class used for dynamic pages */
 main {
   margin: 5px;
+  /* background-color: rgb(61, 77, 90); */
 }
-
+body {
+  background-color: rgba(251, 240, 240, 0.876);
+}
 h1 {
   font-size: 24px;
 }
