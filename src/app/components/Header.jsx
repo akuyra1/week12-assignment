@@ -48,7 +48,7 @@ const Header = () => {
           {userId && (
             <Link
               href="/profile"
-              className="text-white hover:text-red-100 mr-4"
+              className="text-white hover:text-red-100 mr-5 profileLink"
             >
               Profile
             </Link>
