@@ -1,4 +1,4 @@
-export default async function handler(req, res) {
+export default async function POST(req, res) {
   const { query } = req.body;
   const APIKEY = process.env.IGDB_API_KEY;
   const clientId = process.env.IGDB_CLIENT_ID;
@@ -24,6 +24,6 @@ export default async function handler(req, res) {
       .json({ error: "Network response was not ok" });
   }
 
-  const data = await response.json();
-  return res.status(200).json(data);
+  const data = await request.json();
+  return new Response(JSON.stringify(data));
 }
