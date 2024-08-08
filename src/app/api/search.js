@@ -1,3 +1,4 @@
+// pages/api/search.js
 export default async function handler(req, res) {
   const { query } = req.body;
   const APIKEY = process.env.IGDB_API_KEY;
@@ -21,7 +22,7 @@ export default async function handler(req, res) {
   if (!response.ok) {
     return res
       .status(response.status)
-      .json({ error: "Network response was not ok" });
+      .json({ error: "Network response was not bleeeeeh" });
   }
 
   const data = await response.json();

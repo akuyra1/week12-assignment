@@ -1,16 +1,39 @@
-export default async function fetchSearch(query) {
-  const response = await fetch("/api/search", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ query }),
-  });
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
+import fetchSearch from "../utils/fetchSearch";
+import SearchBar from "../components/SearchBar";
 
-  if (!response.ok) {
-    throw new Error("Network response was bleeeh");
-  }
+export default function SearchResult() {
+  const searchParams = useSearchParams();
+  const query = searchParams.get("query") || "";
 
-  const data = await response.json();
-  return data;
+  const [results, setResults] = useState([]);
+  const [searchQuery, setSearchQuery] = useState(query);
+
+  useEffect(() => {
+    if (searchQuery) {
+      fetchResults(searchQuery);
+    }
+  }, [searchQuery]);
+
+  const fetchResults = async (query) => {
+    try {
+      const data = await fetchSearch(query);
+      setResults(data);
+    } catch (error) {
+      console.error("Error fetching search results:", error);
+    }
+  };
+
+  return (
+    <div>
+      <h1>Search Results</h1>
+      <SearchBar />
+      <ul>
+        {results.map((result, index) => (
+          <li key={index}>{result.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
 }
