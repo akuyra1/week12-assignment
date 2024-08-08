@@ -44,7 +44,7 @@ const GameCommentFormClient = ({ handleSubmit, params, userInfo }) => {
         <div className="flex">
           <Image
             src={userInfo.profileImage}
-            alt="User Profile picture"
+            alt={`${userInfo.userName}'s profile picture`}
             width={75}
             height={75}
             className="commenting-profile-pic"

@@ -38,6 +38,7 @@ export default async function FavouriteGames({ userId }) {
                 <h3 className="fav-game-title">{game.title}</h3>
               </div>
               </Link>
+
             </div>
           ))}
         </div>
