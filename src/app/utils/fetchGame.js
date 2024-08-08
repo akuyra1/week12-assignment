@@ -1,19 +1,17 @@
-// igdb fetch from API
-export default async function fetchGame(params) {
-  let APIKEY = process.env.IGDB_API_KEY;
-  let clientId = process.env.IGDB_CLIENT_ID;
-
-  // console.log("params has:", params);
-
-  const result = await fetch("http://localhost:3000/api/route", {
+// app/utils/igdb.js
+export default async function igdbFetch({ action, params, endpoint, query }) {
+  const response = await fetch("http://localhost:3000/api/route", {
     method: "POST",
     headers: {
-      "Client-ID": `${clientId}`,
-      Authorization: `Bearer ${APIKEY}`,
+      "Content-Type": "application/json",
     },
-    body: `fields name, summary, platforms.name, involved_companies.company.name, artworks.url, genres.name, first_release_date, themes.name, cover.*; where slug = "${params}"; limit 1;`,
+    body: JSON.stringify({ action, params, endpoint, query }),
   });
 
-  const data = await result.json();
+  if (!response.ok) {
+    throw new Error("Network response was not ok");
+  }
+
+  const data = await response.json();
   return data;
 }
