@@ -1,4 +1,3 @@
-// app/utils/fetchSearch.js
 export default async function fetchSearch(query) {
   const response = await fetch("/api/search", {
     method: "POST",
