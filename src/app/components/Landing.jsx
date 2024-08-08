@@ -12,10 +12,10 @@ export default function Landing() {
           Welcome to GameNook, the ultimate game haven! Whether you&apos;re
           hunting dragons, building empires, or just looking to unwind with some
           digital zen, you&apos;ve landed in the right place. Dive into our game
-          catalogue and save your favourites now!; button; Let&apos;s play!
+          catalogue and save your favourites now! Let&apos;s play!
         </p>
 
-        <SignUpButton>Sign In/Up</SignUpButton>
+        <SignUpButton mode="modal">Sign In/Up</SignUpButton>
       </SignedOut>
     </div>
   );
