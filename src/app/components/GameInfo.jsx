@@ -3,14 +3,22 @@ import gameImg from "@/../public/assets/gameboy.jpg";
 import heart from "@/../public/assets/heart.jpg";
 import fetchGame from "../utils/fetchGame.js";
 import "@/app/styles/GameInfoPage.css";
+import { toggleFav } from "./favouriteGame.js";
+// import FavButton from "./FavButton.jsx";
 
-export default async function GameInfo({ params }) {
+export default async function GameInfo({ params, userInfo, toggleFav }) {
   // console.log(params);
   const gameInfo = await fetchGame(params.slug);
   // console.log(gameInfo);
   // console.log(JSON.stringify(gameInfo));
   let time = new Date(gameInfo[0].first_release_date * 1000);
   let stringTime = time.toLocaleDateString("en-GB");
+
+  let coverUrl = `https://images.igdb.com/igdb/image/upload/t_cover_big_2x/${gameInfo[0].cover.image_id}.jpg`;
+  let title = gameInfo[0].name;
+
+  // toggleFav(userInfo.userId, params.slug, coverUrl, title);
+  //function works but needs to have a toggle button in a client component
 
   return (
     <div className="game-info-container">
@@ -26,9 +34,20 @@ export default async function GameInfo({ params }) {
           <div className="game-title-container">
             <h1 className="game-title">{gameInfo[0].name}</h1>
             <div className="heart-button">
-              <button>
+              {/* //favourite toggle here */}
+
+              {/* <FavButton
+                params={params}
+                userInfo={userInfo}
+                coverUrl={coverUrl}
+                title={title}
+              ></FavButton> */}
+
+              {/* this needs to be replaced by the favouriteGame Plugin */}
+              {/* <button>
+                        
                 <Image src={heart} alt="favourite button" width={30} />
-              </button>
+              </button> */}
             </div>
           </div>
           <p>
@@ -52,7 +71,7 @@ export default async function GameInfo({ params }) {
           </p>
         </div>
       </div>
-      
+
       <div className="game-description">
         <h3>Game Summary</h3>
         <p>{gameInfo[0].summary}</p>
