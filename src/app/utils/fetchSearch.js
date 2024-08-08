@@ -1,5 +1,5 @@
 export default async function fetchSearch(query) {
-  const response = await fetch("/api/search", {
+  const response = await fetch("/api/route", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
