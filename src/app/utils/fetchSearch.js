@@ -1,5 +1,5 @@
 export default async function fetchSearch(query) {
-  const response = await fetch("/api/route", {
+  const response = await fetch("http://localhost:3000/api", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -11,6 +11,6 @@ export default async function fetchSearch(query) {
     throw new Error("Network response was not ok");
   }
 
-  const data = await response.json();
-  return data;
+  const data = await request.json();
+  return new Response(JSON.stringify(data));
 }
