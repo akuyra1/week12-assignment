@@ -1,4 +1,3 @@
-"use client";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import fetchSearch from "../utils/fetchSearch";
@@ -26,18 +25,10 @@ export default function SearchResult() {
     }
   };
 
-  const handleSearch = (query) => {
-    if (query !== searchQuery) {
-      setSearchQuery(query);
-      // Update the URL without refreshing the page
-      window.history.pushState({}, "", `/search-result?query=${query}`);
-    }
-  };
-
   return (
     <div>
       <h1>Search Results</h1>
-      <SearchBar onSearch={handleSearch} />
+      <SearchBar />
       <ul>
         {results.map((result, index) => (
           <li key={index}>{result.name}</li>
