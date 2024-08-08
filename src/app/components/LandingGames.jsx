@@ -1,5 +1,5 @@
 import Image from "next/image";
-import gameImg from "@/../public/assets/gameboy.jpg";
+// import gameImg from "@/../public/assets/gameboy.jpg";
 import fetchData from "../utils/fetchData";
 import Link from "next/link";
 
@@ -15,7 +15,12 @@ export default async function LandingGames() {
 
   function wrangleData() {
     for (let i = 0; i < game.length; i++) {
-      imgIdArray.push([game[i].cover.image_id, game[i].id, game[i].slug]);
+      imgIdArray.push([
+        game[i].cover.image_id,
+        game[i].id,
+        game[i].slug,
+        game[i].name,
+      ]);
     }
   }
   wrangleData();
@@ -30,7 +35,7 @@ export default async function LandingGames() {
               <Image
                 className="each-game-image"
                 src={`https://images.igdb.com/igdb/image/upload/t_cover_big_2x/${game[0]}.jpg`}
-                alt="video game image"
+                alt={`Cover art for ${game[3]}`}
                 width={264}
                 height={374}
               />
