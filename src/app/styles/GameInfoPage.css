@@ -1,43 +1,156 @@
 .game-info-container {
-    margin: 1rem;
-    padding: 1rem;
+  margin: 1rem;
+  padding: 1rem;
 }
 
 .game-title-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 .game-image {
-    border-radius: 5px;
-    transform: scale(1.2);
-    box-shadow: 2px 2px 2px gray;
+  border-radius: 5px;
+  transform: scale(1.2);
+  box-shadow: 2px 2px 2px gray;
 }
 
 .game-description {
-    width: 400px;
-    padding: 1rem;
+  width: 400px;
+  padding: 1rem;
 }
 
-.game-title{
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: blueviolet;
+.game-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: blueviolet;
 }
 
 .game-description h3 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: rgb(82, 82, 82);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(82, 82, 82);
 }
 
 .game-title-container1 {
-    display: flex;
+  display: flex;
 }
 
 /* The message to login for commenting */
-.not-signed-in-container{
+.not-signed-in-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 15px;
+  border: 2px solid black;
+  border-radius: 2rem;
+  width: 90%;
+  margin: 1rem auto;
+  padding: 1rem;
+  box-shadow: 2px 2px 2px gray;
+}
+
+.signUpToCommentBtn,
+.signInToCommentbtn {
+  color: #fff;
+  background-color: rgb(202, 85, 85);
+  margin: 0 auto;
+  width: 50%;
+  font-size: 1rem;
+}
+
+.signUpToCommentBtn:hover,
+.signInToCommentbtn:hover {
+  background-color: rgb(167, 81, 81);
+}
+
+@media only screen and (max-width: 700px) {
+  .game-info-container {
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+  }
+  .game-details {
+    margin: 0 40px;
+    width: 80%;
+  }
+
+  .game-image {
+    margin-top: 40px;
+    margin-left: 20px;
+    border-radius: 5px;
+    transform: scale(1.4);
+  }
+  .game-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .game-description {
+    margin: 4rem 0.5rem;
+    font-size: 1.18rem;
+  }
+
+  .game-title {
+    margin: 1rem 1rem;
+    font-size: 2rem;
+  }
+
+  .game-title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0;
+  }
+
+  .game-title-container1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 30px;
+    width: 100%;
+    margin-bottom: -2rem;
+  }
+
+  .body-container {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+  }
+
+  .game-specs {
+    padding-left: 3rem;
+    /* background-color: red; */
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .game-description {
+    margin: 5rem 1rem;
+    font-size: 1.2rem;
+  }
+
+  .game-image {
+    margin-top: 4rem;
+    margin-left: 2.5rem;
+    transform: scale(2);
+  }
+
+  .game-title {
+    font-size: 2rem;
+  }
+
+  .game-title-container1 {
+    margin-bottom: -1rem;
+  }
+
+  .game-info-container {
+    gap: 8rem;
+  }
+  /* The message to login for commenting */
+  .not-signed-in-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -45,214 +158,89 @@
     gap: 15px;
     border: 2px solid black;
     border-radius: 2rem;
-    width: 90%;
-    margin: 1rem auto;
     padding: 1rem;
-    box-shadow: 2px 2px 2px gray;
-}
+    width: 500px;
+    margin: 1rem auto;
+  }
 
-.signUpToCommentBtn,
-.signInToCommentbtn {
-    color: #fff;
-    background-color: rgb(202, 85, 85);
+  .signUpToCommentBtn,
+  .signInToCommentbtn {
     margin: 0 auto;
     width: 50%;
-    font-size: 1rem;
-}
-
-.signUpToCommentBtn:hover,
-.signInToCommentbtn:hover {
-    background-color: rgb(167, 81, 81);
-}
-
-
-@media only screen and (max-width: 700px) {
-    .game-info-container{
-        display: flex;
-        flex-direction: row;
-        gap: 35px;
-    }
-    .game-details {
-        margin: 0 40px;
-        width: 80%;
-    }
-
-    .game-image {
-        margin-top: 40px;
-        margin-left: 20px;
-        border-radius: 5px;
-        transform: scale(1.4);  
-    }
-    .game-info {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .game-description {
-        margin: 4rem .5rem;
-        font-size: 1.18rem;
-    }
-
-    .game-title {
-        margin: 1rem 1rem;
-        font-size: 2rem; 
-    }
-
-    .game-title-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: flex-start;
-        margin: 0;
-    }
-
-    .game-title-container1 {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        gap: 30px;
-        width: 100%;
-        margin-bottom: -2rem;
-    }
-
-    .body-container {
-        display: flex;
-        flex-direction: column;
-        margin: 5px;
-    }
-
-    .game-specs {
-        padding-left: 3rem;
-        /* background-color: red; */
-    }
-}
-
-@media only screen and (min-width: 600px) {
-    .game-description {
-        margin: 5rem 1rem;
-        font-size: 1.2rem;
-    }
-
-    .game-image {
-        margin-top: 4rem;
-        margin-left: 2.5rem;
-        transform: scale(2);  
-    }
-
-    .game-title{
-        font-size: 2rem;
-    }
-
-    .game-title-container1{
-        margin-bottom: -1rem;
-    }
-
-    .game-info-container {
-        gap: 8rem;
-    }
-    /* The message to login for commenting */
-    .not-signed-in-container{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        gap: 15px;
-        border: 2px solid black;
-        border-radius: 2rem;
-        padding: 1rem;
-        width: 500px;
-        margin: 1rem auto;
-    }
-
-    .signUpToCommentBtn,
-    .signInToCommentbtn {
-        margin: 0 auto;
-        width: 50%;
-    }
+  }
 }
 
 @media only screen and (min-width: 701px) {
-    .game-image {
-        margin-top: 7.4rem;
-        margin-left: 5rem;
-        transform: scale(2.5);
-    }
- 
-    .game-description {
-        margin-top: 8rem;
-        margin-left: 1rem;
-        font-size: 1.3rem;
-    }
+  .game-image {
+    margin-top: 7.4rem;
+    margin-left: 5rem;
+    transform: scale(2.5);
+  }
 
-    .game-description h3 {
-        font-size: 2rem !important;
-    }
+  .game-description {
+    margin-top: 8rem;
+    margin-left: 1rem;
+    font-size: 1.3rem;
+  }
 
-    .game-title-container1 {
-        margin-left: 2rem;
-        /* background-color: red; */
-    }
+  .game-description h3 {
+    font-size: 2rem !important;
+  }
 
-    .game-info-container {
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        align-content: flex-start;
-    }
+  .game-title-container1 {
+    margin-left: 2rem;
+    /* background-color: red; */
+  }
 
-    .game-specs {
-        display: flex;
-        flex-direction: column;
-        margin-left: -5rem;
-        padding-left: 2rem;
-        font-size: 1.2rem;
-    }
+  .game-info-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+  }
+
+  .game-specs {
+    display: flex;
+    flex-direction: column;
+    margin-left: -5rem;
+    padding-left: 2rem;
+    font-size: 1.2rem;
+  }
 }
 
 @media only screen and (min-width: 900px) {
-    .game-image {
-        transform: scale(2.3);
-        margin: 7.5rem 5rem;
-    }
-    
-    .game-info {
-        display: flex;
-        flex-direction: column;
-    }
+  .game-image {
+    transform: scale(2.3);
+    margin: 7.5rem 5rem;
+  }
 
-    .game-title{
-        font-size: 1.8rem;
-    }
-    
-    .game-description h3 {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: rgb(82, 82, 82);
-    }
+  .game-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .game-title {
+    font-size: 1.8rem;
+  }
+
+  .game-description h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(82, 82, 82);
+  }
 }
 
 @media only screen and (min-width: 1200px) {
-    .game-specs,
-    .game-description {
-        font-size: 1.5rem;
-    }
+  .game-specs,
+  .game-description {
+    font-size: 1.5rem;
+  }
 
-    .game-title-container1 {
-        margin-bottom: 1rem;
-    }
+  .game-title-container1 {
+    margin-bottom: 1rem;
+  }
 
-    .game-description h3 {
-        font-size: 2rem;
-    }
-
+  .game-description h3 {
+    font-size: 2rem;
+  }
 }
-
-
-
-
-
-
-
-
-
-

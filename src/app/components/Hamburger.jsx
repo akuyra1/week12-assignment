@@ -1,15 +1,15 @@
-"use client"
-import '@/app/styles/Hamburger.css'
-import '@/app/styles/Navigation.css'
-import React from 'react';
-import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
+"use client";
+import "@/app/styles/Hamburger.css";
+import "@/app/styles/Navigation.css";
+import React from "react";
+import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import {
   HamburgerMenuIcon,
   DotFilledIcon,
   CheckIcon,
   ChevronRightIcon,
-} from '@radix-ui/react-icons';
-import Link from 'next/link';
+} from "@radix-ui/react-icons";
+import Link from "next/link";
 import {
   UserButton,
   SignInButton,
@@ -18,13 +18,11 @@ import {
   SignedOut,
 } from "@clerk/nextjs";
 
-
 const DropdownMenuDemo = () => {
-
   return (
-    <div className='hamburger'>
-      <DropdownMenu.Root >
-        <DropdownMenu.Trigger asChild className='ml-4'>
+    <div className="hamburger">
+      <DropdownMenu.Root>
+        <DropdownMenu.Trigger asChild className="ml-4">
           <button className="IconButton" aria-label="Customise options">
             <HamburgerMenuIcon />
           </button>
@@ -36,15 +34,15 @@ const DropdownMenuDemo = () => {
               <Link href="/">Home</Link>
             </DropdownMenu.Item>
             <DropdownMenu.Item className="DropdownMenuItem">
-            <Link href="/profile">Profile</Link>
+              <Link href="/profile">Profile</Link>
             </DropdownMenu.Item>
-            <DropdownMenu.Item className="DropdownMenuItem">
+            {/* <DropdownMenu.Item className="DropdownMenuItem">
             <Link href="/">Games</Link>
-            </DropdownMenu.Item>
+            </DropdownMenu.Item> */}
             <DropdownMenu.Item className="DropdownMenuItem">
-            <Link href="/">Favorites</Link>
+              <Link href="/profile">Favorites</Link>
             </DropdownMenu.Item>
-            <div className='login-container'>
+            <div className="login-container">
               <SignedOut>
                 <SignUpButton
                   mode="modal"
