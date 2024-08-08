@@ -1,7 +1,7 @@
 import { dbConnect } from "../utils/dbConnection";
 const db = dbConnect();
 //check table for entry which passes result to the toggleFav function
-async function isItFavourited(userId, slug) {
+export async function isItFavourited(userId, slug) {
   try {
     const result = await db.query(
       `SELECT * FROM nook_user_fav_games WHERE user_id = $1 AND game_slug = $2`,
