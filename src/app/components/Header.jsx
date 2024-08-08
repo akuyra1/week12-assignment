@@ -21,7 +21,7 @@ const Header = () => {
       <nav className="py-4 px-6 flex items-center justify-between mb-5 navContainer">
         <div className="flex items-center">
           <Link href="/">
-            <div className="text-lg uppercase font-bold text-white">
+            <div className="text-2xl font-bold text-purple-600 hover:text-purple-400 transition duration-300 ease-in-out transform hover:scale-105 hover:rotate-1 hover:drop-shadow-xl">
               GameNook
             </div>
           </Link>
