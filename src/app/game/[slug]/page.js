@@ -12,7 +12,7 @@ export default async function Game({ params }) {
   let serverData = undefined;
 
   if (user === null) {
-    let serverData = undefined;
+    let serverData = { undefined };
   } else {
     serverData = {
       userId: user.id,
@@ -49,7 +49,9 @@ export default async function Game({ params }) {
           />
         </div>
       </SignedOut>
-      <GameComments params={params} />
+      <SignedIn>
+        <GameComments params={params} />
+      </SignedIn>
     </div>
   );
 }

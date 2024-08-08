@@ -6,24 +6,19 @@ import "@/app/styles/GameInfoPage.css";
 import { revalidatePath } from "next/cache.js";
 import { toggleFav } from "./favouriteGame.js";
 import { redirect } from "next/navigation.js";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
+import FavouriteButton from "./FavButtonClient.jsx";
 
 export default async function GameInfo({ params, userInfo }) {
   // console.log(params);
+
+  console.log("userInfo:", userInfo);
+  console.log("userInfo.userId:", userInfo?.userId);
   const gameInfo = await fetchGame(params.slug);
   // console.log(gameInfo);
   // console.log(JSON.stringify(gameInfo));
   let time = new Date(gameInfo[0].first_release_date * 1000);
   let stringTime = time.toLocaleDateString("en-GB");
-
-  let coverUrl = `https://images.igdb.com/igdb/image/upload/t_cover_big_2x/${gameInfo[0].cover.image_id}.jpg`;
-  let title = gameInfo[0].name;
-
-  async function handleToggle() {
-    "use server";
-    await toggleFav(userInfo.userId, params.slug, coverUrl, title);
-    revalidatePath(`/game/${params.slug}`);
-    redirect("/profile");
-  }
 
   return (
     <>
@@ -63,17 +58,16 @@ export default async function GameInfo({ params, userInfo }) {
               <span className="span">Theme:</span>{" "}
               {gameInfo[0].themes.map((theme) => theme.name).join(", ")}
             </p>
-            <div>
-              <form action={handleToggle}>
-                <button type="submit">
-                  <Image
-                    src="/assets/filled-heart.png"
-                    width={75}
-                    height={75}
-                  ></Image>
-                </button>
-              </form>
-            </div>
+            <SignedIn>
+              <FavouriteButton
+                params={params}
+                userInfo={userInfo}
+                gameInfo={gameInfo}
+              />
+            </SignedIn>
+            <SignedOut>
+              <h3>Log in to add this game to your favourites!</h3>
+            </SignedOut>
           </div>
         </div>
         <div className="game-description">

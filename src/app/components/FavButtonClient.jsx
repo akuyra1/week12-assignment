@@ -1,23 +1,32 @@
-"use client";
-
-import heart from "@/../public/assets/heart.jpg";
-import Image from "next/image";
 import { toggleFav } from "./favouriteGame";
-// import { useState } from "react";
+import Image from "next/image";
+import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 
-export default function FavButton({ params, userInfo, coverUrl, title }) {
-  //   const [toggle, setToggle] = useState();
+export default function FavouriteButton({ userInfo, params, gameInfo }) {
+  let coverUrl = `https://images.igdb.com/igdb/image/upload/t_cover_big_2x/${gameInfo[0].cover.image_id}.jpg`;
+  let title = gameInfo[0].name;
 
-  //need to usestate and onClick with a "form" to active the toggleFav function
+  async function handleToggle() {
+    "use server";
 
-  //maybe if statement to return full heart if the db check came back with
+    await toggleFav(userInfo.userId, params.slug, coverUrl, title);
+    revalidatePath(`/game/${params.slug}`);
+    redirect("/profile");
+  }
 
   return (
-    <div className="heart-button">
-      {/* button that will show if logged in */}
-      {/* <button onSubmit={toggleFav(userInfo.userId, params.slug)}>
-        <Image src={heart} alt="favourite button" width={30} />
-      </button> */}
+    <div>
+      <form action={handleToggle}>
+        <button type="submit">
+          <Image
+            src="/assets/filled-heart.png"
+            width={75}
+            height={75}
+            alt="favourite button"
+          ></Image>
+        </button>
+      </form>
     </div>
   );
 }
