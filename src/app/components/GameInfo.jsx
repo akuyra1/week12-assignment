@@ -3,10 +3,11 @@ import gameImg from "@/../public/assets/gameboy.jpg";
 import heart from "@/../public/assets/heart.jpg";
 import fetchGame from "../utils/fetchGame.js";
 import "@/app/styles/GameInfoPage.css";
-// import { toggleFav } from "./favouriteGame.js";
-// import FavButton from "./FavButton.jsx";
+import { revalidatePath } from "next/cache.js";
+import { toggleFav } from "./favouriteGame.js";
+import { redirect } from "next/navigation.js";
 
-export default async function GameInfo({ params, userInfo, toggleFav }) {
+export default async function GameInfo({ params, userInfo }) {
   // console.log(params);
   const gameInfo = await fetchGame(params.slug);
   // console.log(gameInfo);
@@ -17,17 +18,18 @@ export default async function GameInfo({ params, userInfo, toggleFav }) {
   let coverUrl = `https://images.igdb.com/igdb/image/upload/t_cover_big_2x/${gameInfo[0].cover.image_id}.jpg`;
   let title = gameInfo[0].name;
 
-  //   toggleFav(userInfo.userId, params.slug, coverUrl, title);
-  //function works but needs to have a toggle button in a client component
+  async function handleToggle() {
+    "use server";
+    await toggleFav(userInfo.userId, params.slug, coverUrl, title);
+    revalidatePath(`/game/${params.slug}`);
+    redirect("/profile");
+  }
 
   return (
     <>
       <div className="body-container">
         <div className="game-title-container1">
           <h1 className="game-title">{gameInfo[0].name}</h1>
-          <button>
-            <Image src={heart} alt="favourite button" width={30} />
-          </button>
         </div>
         <div className="game-info-container">
           <div className="game-info">
@@ -61,6 +63,17 @@ export default async function GameInfo({ params, userInfo, toggleFav }) {
               <span className="span">Theme:</span>{" "}
               {gameInfo[0].themes.map((theme) => theme.name).join(", ")}
             </p>
+            <div>
+              <form action={handleToggle}>
+                <button type="submit">
+                  <Image
+                    src="/assets/filled-heart.png"
+                    width={75}
+                    height={75}
+                  ></Image>
+                </button>
+              </form>
+            </div>
           </div>
         </div>
         <div className="game-description">

@@ -2,6 +2,7 @@
 
 import heart from "@/../public/assets/heart.jpg";
 import Image from "next/image";
+import { toggleFav } from "./favouriteGame";
 // import { useState } from "react";
 
 export default function FavButton({ params, userInfo, coverUrl, title }) {
