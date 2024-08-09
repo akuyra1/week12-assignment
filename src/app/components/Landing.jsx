@@ -1,5 +1,6 @@
 import "@/app/globals.css";
 import { SignedIn, SignedOut, SignUpButton } from "@clerk/nextjs";
+import Link from "next/link";
 
 export default function Landing() {
   return (
@@ -7,6 +8,7 @@ export default function Landing() {
       <h1 className="text-5xl font-bold text-purple-500 hover:text-purple-400 transition-colors duration-300 ease-in-out drop-shadow-lg">
         GameNook
       </h1>
+      <Link href="/search">Search for games</Link>
       <SignedOut>
         <p className="welcome-message">
           Welcome to GameNook, the ultimate game haven! Whether you&apos;re
