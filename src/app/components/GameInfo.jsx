@@ -58,19 +58,22 @@ export default async function GameInfo({ params, userInfo }) {
               <span className="span">Theme:</span>{" "}
               {gameInfo[0].themes.map((theme) => theme.name).join(", ")}
             </p>
-            <SignedIn>
-              <FavouriteButton
-                params={params}
-                userInfo={userInfo}
-                gameInfo={gameInfo}
-              />
-            </SignedIn>
-            <SignedOut>
-              <h3>Log in to add this game to your favourites!</h3>
-            </SignedOut>
           </div>
         </div>
         <div className="game-description">
+          <SignedIn>
+            <FavouriteButton
+              params={params}
+              userInfo={userInfo}
+              gameInfo={gameInfo}
+            />
+          </SignedIn>
+          <SignedOut>
+            <h3 className="login-fav-message text-lg pt-2">
+              Log in to add this game to your favourites!
+            </h3>
+            <br></br>
+          </SignedOut>
           <h3>Game Summary</h3>
           <p>{gameInfo[0].summary}</p>
         </div>
