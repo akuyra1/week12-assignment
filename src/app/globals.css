@@ -96,7 +96,7 @@ h4 {
 }
 
 .game-description {
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   grid-column: 1 / -1;
 }
 
@@ -171,6 +171,11 @@ h4 {
   .games-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .game-description {
+    margin-top: 0rem;
+    grid-column: 1 / -1;
   }
 }
 
