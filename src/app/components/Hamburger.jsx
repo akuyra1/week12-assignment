@@ -40,7 +40,7 @@ const DropdownMenuDemo = () => {
             <Link href="/">Games</Link>
             </DropdownMenu.Item> */}
             <DropdownMenu.Item className="DropdownMenuItem">
-              <Link href="/profile">Favorites</Link>
+              <Link href="/search">Search</Link>
             </DropdownMenu.Item>
             <div className="login-container">
               <SignedOut>
