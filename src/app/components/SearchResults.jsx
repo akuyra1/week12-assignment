@@ -1,4 +1,5 @@
 "use client";
+import "@/app/styles/GameSearch.css"
 
 export default function SearchResultsBox({ searchProps }) {
   console.log("Prop passed to results box:", searchProps);
