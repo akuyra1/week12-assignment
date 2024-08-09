@@ -2,6 +2,7 @@
 import { useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import "@/app/styles/GameSearch.css"
 
 const SearchWithClient = () => {
   const queryRef = useRef(null);
@@ -32,36 +33,39 @@ const SearchWithClient = () => {
   };
 
   return (
-    <div className="max-w-sm mx-auto">
-      <h1>Enter your search:</h1>
-      <br />
-      <form
-        className="max-w-sm mx-auto"
-        onSubmit={handleFormSubmit}
-        action="#"
-        method="post"
-      >
-        <label htmlFor="query"></label>
-        <input
-          type="text"
-          name="query"
-          required
-          className="mb-5 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          ref={queryRef}
-        />
+    <div>
+      <div className="form-container">
+        <h1 className="search-title">Enter your search</h1>
         <br />
-        <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-          type="submit"
+        <form
+          className=""
+          onSubmit={handleFormSubmit}
+          action="#"
+          method="post"
         >
-          Submit
-        </button>
-      </form>
+          <label htmlFor="query"></label>
+          <input
+            type="text"
+            name="query"
+            required
+            className="search-bar mb-3 ml-4 mr-4 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            ref={queryRef}
+          />
+          <br />
+          <button
+            className=" search-button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+            type="submit"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
       {response && (
         <div className="games-container">
           {response.map((item) => (
-            <div key={item.id}>
-              <h2>{item.name}</h2>
+            
+            <div className="container2" key={item.id}>
+              <h2 className="search-game-title">{item.name}</h2>
               {item.game && item.game.slug && item.game.cover && (
                 <Link href={`/game/${item.game.slug}`}>
                   <Image
